@@ -50,7 +50,6 @@ if __name__ == '__main__':
     for ex in ext:
         try:
             bot.load_extension('ext.'+ex)
-            bot.load_extension('eval.ban')
         except Exception as e:
             print('Failed to load extension {}\n{}: {}'.format(ex, type(e).__name__, e))
 

@@ -25,7 +25,7 @@ async def on_member_join(member):
 async def on_command_error(error, ctx):
     channel = ctx.message.channel
     if isinstance(error, commands.CommandOnCooldown):
-        await bot.send_message(ctx.message.channel, "Nu poti folosi comanda pentru inca {retry_after:.2f} secunde.".format(retry_after=error.retry_after))
+        await bot.send_message(channel, "Nu poti folosi comanda pentru inca {retry_after:.2f} secunde.".format(retry_after=error.retry_after))
     elif isinstance(error, commands.CommandNotFound):
         return
     elif isinstance(error, commands.MissingRequiredArgument):
